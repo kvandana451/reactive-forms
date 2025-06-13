@@ -13,6 +13,9 @@ export class NameEditorComponent {
   designation = new FormControl('Junior Angular Developer');
   desg: any = '';
   country = new FormControl();
+  updateName() {
+    this.name.setValue('Nancy');
+  }
   ngOnInit() {
     this.designation.valueChanges.subscribe((value: string | null) => {
       console.log(value);
