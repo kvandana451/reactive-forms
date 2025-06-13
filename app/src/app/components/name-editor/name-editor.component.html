@@ -1,2 +1,9 @@
 <label>Name:</label>
 <input type="text" [formControl]="name">
+<p>Your Name is :{{(name.valueChanges | async)}}</p>
+<label>Designation:</label>
+<input type="text" [formControl]="designation">
+<p>Your Designation is: {{desg|| designation.value}}</p>
+<label>Country:</label>
+<input type="text" [formControl]="country">
+<p>Your country is:{{country.value}}</p>
