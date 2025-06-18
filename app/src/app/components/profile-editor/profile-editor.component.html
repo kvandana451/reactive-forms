@@ -4,6 +4,19 @@
     <input type="text" formControlName="firstName">
     <label> Second Name:</label>
     <input type="text" formControlName="lastName">
+    <div formGroupName="address">
+        <h4>Address</h4>
+        <label>Street:</label>
+        <input type="text" formControlName="street">
+        <label>City:</label>
+        <input type="text" formControlName="city">
+        <label>State:</label>
+        <input type="text" formControlName="state">
+        <label>Zip Code:</label>
+        <input type="text" formControlName="zip">
+
+    </div>
     <p>Complete the form to enable button</p>
     <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+
 </form>
