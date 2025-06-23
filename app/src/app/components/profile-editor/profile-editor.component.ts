@@ -22,4 +22,12 @@ export class ProfileEditorComponent {
   onSubmit() {
     console.warn(this.profileForm.value);
   }
+  updateProfile() {
+    this.profileForm.patchValue({
+      firstName: 'Nancy',
+      address: {
+        street: '123 Drew Street',
+      },
+    });
+  }
 }
