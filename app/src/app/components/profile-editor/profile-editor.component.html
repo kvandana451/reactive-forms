@@ -1,4 +1,5 @@
 <h3>Lets explore FormGroup</h3>
+<p>Form Status:{{profileForm.status}}</p>
 <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
     <label>First Name:</label>
     <input type="text" formControlName="firstName">

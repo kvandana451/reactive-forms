@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-profile-editor',
@@ -26,7 +26,7 @@ export class ProfileEditorComponent {
   profileForm!: FormGroup;
   ngOnInit() {
     this.profileForm = this.fb.group({
-      firstName: [''],
+      firstName: ['', Validators.required],
       lastName: [''],
       address: this.fb.group({
         street: [''],
