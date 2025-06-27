@@ -1,10 +1,11 @@
+import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-profile-editor',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, NgFor],
   templateUrl: './profile-editor.component.html',
   styleUrl: './profile-editor.component.scss',
 })
@@ -34,9 +35,18 @@ export class ProfileEditorComponent {
         state: [''],
         zip: [],
       }),
+      // FORM ARRAY
+      aliases: this.fb.array([this.fb.control('')]),
     });
   }
+  // ACCESS THE FORMARRAY
+  get aliases() {
+    return this.profileForm.get('aliases') as FormArray;
+  }
 
+  addAlias() {
+    this.aliases.push(this.fb.control(''));
+  }
   onSubmit() {
     console.warn(this.profileForm?.value);
   }
